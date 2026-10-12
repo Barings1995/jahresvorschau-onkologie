@@ -577,8 +577,8 @@ fällt nichts ins Gewicht — ein Punkt ist der Jahrgang als JSON, für 2026 run
 
 ## Veröffentlichung
 
-Live unter https://barings1995.github.io/jahresvorschau/, Quelltext unter
-https://github.com/Barings1995/jahresvorschau.
+Live unter https://barings1995.github.io/jahresvorschau-onkologie/, Quelltext unter
+https://github.com/Barings1995/jahresvorschau-onkologie.
 
 `.gitignore` schließt den Ordner `werkzeug/` aus: dort liegt `daten.json` mit
 der vollständigen Heftplanung im Klartext. Öffentlich gehören nur

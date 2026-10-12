@@ -13,7 +13,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
   Dateisystem: die Versionsverwaltung ist hier die Sicherung.
 - **Veröffentlichen:** Gepusht wird ausschließlich auf ausdrückliche Anweisung.
   Nach dem Push wird die Prüfsumme der ausgelieferten Seite
-  (`https://barings1995.github.io/jahresvorschau/index.html`) gegen die lokale
+  (`https://barings1995.github.io/jahresvorschau-onkologie/index.html`) gegen die lokale
   Datei gehalten, bis beide übereinstimmen — GitHub Pages braucht dafür in der
   Regel eine knappe Minute.
 - Der Ordner `werkzeug/` bleibt außerhalb der Versionsverwaltung; er enthält
@@ -21,7 +21,28 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-09 (zuletzt) — Menüeinträge geben nicht mehr nach (veröffentlicht, Commit `8874572`)
+## 2026-10-12 (zuletzt) — Repository umbenannt in `jahresvorschau-onkologie`
+
+**Anlass.** Zur Unterscheidung von der neutralen Fassung (`jahresvorschau-print`)
+hat Marcus das Repository auf GitHub von `jahresvorschau` in
+`jahresvorschau-onkologie` umbenannt.
+
+**Folgen.**
+- Live jetzt unter https://barings1995.github.io/jahresvorschau-onkologie/.
+  Die alte Adresse `…/jahresvorschau/` liefert 404; GitHub Pages leitet nicht
+  weiter. Lesezeichen und weitergegebene Links sind zu erneuern.
+- Der Quelltext-Link leitet GitHub selbst auf den neuen Namen um; der Push-Pfad
+  des lokalen Ordners ist trotzdem umgestellt (`git remote set-url`).
+- Die Anmeldung ist nicht betroffen: E-Mail und Passwort, kein Rücksprunglink,
+  in Supabase nichts umzustellen. Gleiche Domain, gespeicherte Sitzungen bleiben.
+
+**Angepasst.** `README.md` (Veröffentlichung), die Prüfanweisung oben in diesem
+Log, `../Jahresvorschau Print/HINWEIS – abgelöst.md`. `index.html` unverändert
+(MD5 `f5cda1029bc5c3ac8a6fd6874a7299ff`, online gleich unter der neuen Adresse).
+
+---
+
+## 2026-10-09 — Menüeinträge geben nicht mehr nach (veröffentlicht, Commit `8874572`)
 
 **Anlass.** Beim Benutzen des Datenmenüs ist aufgefallen, dass die Einträge seit der
 Knopfdurchsicht beim Klicken um einen Pixel nachgeben. Marcus hält das für nicht
