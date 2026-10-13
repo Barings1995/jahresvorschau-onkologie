@@ -21,7 +21,57 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-12 (zuletzt) — Repository umbenannt in `jahresvorschau-onkologie`
+## 2026-10-13 (zuletzt) — Handy-Anpassung zum Nachschlagen (noch nicht veröffentlicht)
+
+**Anlass.** Marcus möchte die Jahresvorschau auch am Handy nutzen. Der Zweck ist wie bei den
+übrigen Werkzeugen nur das Nachschlagen. Bearbeiten, Daten-Dialoge und Export
+wurden nicht umgebaut.
+
+**Befund bei 390 × 844 px (vorher).**
+- Der Kopf stand fest am oberen Rand und war rund 500 px hoch. Der erste Eintrag begann erst bei y = 700.
+- Beide Knopfbänder liefen über den Rand: „Themenschwerpunkte“ und „Kongressliste“ waren abgeschnitten.
+- „Daten“ und „Export“ standen auf je einer eigenen Zeile.
+- Die Titel belegten drei Zeilen, und die Legende hatte einen verwaisten Trennstrich.
+- Keine Bedienfläche war 32 px hoch (Bänder 30, Chips 27, Jahrgang 23 px).
+- In Matrix und Tabelle wanderte die Titelspalte beim Wischen aus dem Bild.
+
+**Umsetzung.** Neuer Block `@media(max-width:640px)` hinter dem bestehenden:
+- Der Kopf steht am Handy nicht fest (`header{position:static}`).
+- Kopf enger, Logo 22 px, Unterzeile „Termine · Themen · Kongresse“ ausgeblendet.
+- Kurzbeschriftungen in den Bändern: Themen, Liste, Matrix, Kongresse. Im
+  Markup stehen Lang- und Kurzform als `<span class="lang">`/`<span class="kurz">`,
+  `.kurz` ist außerhalb des Handy-Blocks ausgeblendet. Kein Code liest den Text
+  dieser Knöpfe (geprüft).
+- „Daten“ und „Export“ nebeneinander, je halbe Breite. Die Menüs öffnen in voller
+  Breite innerhalb des Bildschirms. Vorher hätte das Datenmenü mit 300 px
+  Mindestbreite links aus dem Bild geragt.
+- Titel-Chips in einer Zeile, seitlich wischbar.
+- Legende als Raster, Trennstrich am Handy ausgeblendet.
+- Bedienflächen mindestens 40 px hoch. Die Jahrgangswahl ist 37 px hoch: Die
+  Tippfläche wurde per Polsterung mit Gegenrand vergrößert, die Kopfzeile wächst dadurch nicht.
+- Suchfeld mit 16 px Schrift, damit iOS beim Antippen nicht hineinzoomt.
+- `html{-webkit-text-size-adjust:100%}` wie in den Angebotswerkzeugen, gegen
+  eigenmächtig vergrößerte Texte im iPhone-Querformat.
+- Neuer Block `@media(max-width:1000px)`: Die Titelspalte von Matrix und Tabelle
+  bleibt beim seitlichen Schieben stehen (`position:sticky`). In der Tabelle
+  bekommt sie einen 1-px-Trennstrich.
+
+**Gemessen (CDP-Handyemulation, 390 und 360 px).**
+- Kein Element ragt über den rechten Rand, `scrollWidth` = Fensterbreite in allen fünf Ansichten.
+- Erster Eintrag bei y = 524 statt 700. Beim Scrollen bleibt kein Kopf mehr stehen.
+- Daten- und Exportmenü liegen bei 14–376 px.
+- Die Titelspalte bleibt bei seitlichem Schieben an x = 14.
+- Desktop 1280/1920 px in allen Ansichten pixelgleich (größte Abweichung 2/255, Kantenglättung).
+- 900 px: nur die Matrix-Titelspalte ändert sich.
+- Druck unverändert: Tabelle 5 Seiten, Kacheln 9, Matrix 1.
+
+**Prüfsummen.** Vorher `f5cda1029bc5c3ac8a6fd6874a7299ff`, nachher
+`e7a702cf84b896197f9936ca07245b9e` (339.836 Bytes). Die Print-Fassung ist über
+`bauen.py` nachgezogen.
+
+---
+
+## 2026-10-12 — Repository umbenannt in `jahresvorschau-onkologie`
 
 **Anlass.** Zur Unterscheidung von der neutralen Fassung (`jahresvorschau-print`)
 hat Marcus das Repository auf GitHub von `jahresvorschau` in
