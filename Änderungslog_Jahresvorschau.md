@@ -21,7 +21,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-13 (zuletzt) — Handy-Anpassung zum Nachschlagen (noch nicht veröffentlicht)
+## 2026-10-13 (zuletzt) — Handy-Anpassung zum Nachschlagen (veröffentlicht, Commit `a1b2d82`)
 
 **Anlass.** Marcus möchte die Jahresvorschau auch am Handy nutzen. Der Zweck ist wie bei den
 übrigen Werkzeugen nur das Nachschlagen. Bearbeiten, Daten-Dialoge und Export
