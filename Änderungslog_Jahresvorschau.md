@@ -21,7 +21,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-13 (zuletzt) — Handy: Seite angemeldet zu breit, Safari zoomte heraus (noch nicht veröffentlicht)
+## 2026-10-13 (zuletzt) — Handy: Seite angemeldet zu breit, Safari zoomte heraus (veröffentlicht, Commit `bb8ddb5`)
 
 **Anlass.** Marcus hat am iPhone bemerkt, dass die Inhalte schmaler wirken, als sie sein müssten.
 
