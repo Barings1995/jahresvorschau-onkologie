@@ -389,11 +389,20 @@ table.tab tbody tr:hover td{background:var(--surface2)}
    mindestens 40 px hoch, Titel in einer wischbaren Zeile. */
 @media(max-width:640px){
   header{position:static}
-  .sm-hero{padding:10px 14px 9px}
+  .sm-hero{padding:10px 14px 9px;position:relative}
+  /* "Abmelden" (nur angemeldet sichtbar) lag neben dem Titel und schob die
+     Seite auf 394 px - Safari zoomte daraufhin alles heraus. Unten rechts
+     auf Hoehe der Jahreszahl ist Platz; die Tippflaeche reicht ueber den
+     sichtbaren Rahmen hinaus. */
+  .hero-konto{position:absolute;right:14px;bottom:9px}
+  .hk-ab{position:relative}
+  .hk-ab::after{content:"";position:absolute;inset:-9px -8px}
   .sm-hero-head{gap:12px;margin-bottom:0}
   .sm-logo-white svg{height:22px!important}
   .brand-sub{display:none}
-  .hero-year{padding-top:7px;padding-bottom:7px;margin-top:-7px;margin-bottom:-7px}
+  /* Jahreszahl immer in eigener Zeile - sonst rueckt sie bei breiteren
+     Handys hinter den Titel und unter den Knopf Abmelden. */
+  .hero-year{display:block;padding-top:7px;padding-bottom:7px;margin-top:-7px;margin-bottom:-7px}
   .controls{padding:10px 14px 12px}
   .search-row{flex-direction:row;flex-wrap:wrap;gap:8px;margin-bottom:10px}
   .search-wrap,.mode-group,.view-group{flex:1 1 100%}

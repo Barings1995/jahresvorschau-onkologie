@@ -21,7 +21,35 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-13 (zuletzt) — Handy-Anpassung zum Nachschlagen (veröffentlicht, Commit `a1b2d82`)
+## 2026-10-13 (zuletzt) — Handy: Seite angemeldet zu breit, Safari zoomte heraus (noch nicht veröffentlicht)
+
+**Anlass.** Marcus hat am iPhone bemerkt, dass die Inhalte schmaler wirken, als sie sein müssten.
+
+**Ursache.**
+- Der Knopf „Abmelden“ ist nur angemeldet sichtbar. Er stand am Handy rechts neben dem Titel und ragte über den Rand.
+- Die Seite wurde dadurch bei 375 und 390 px Displaybreite 394 px breit.
+- Safari zoomt eine zu breite Seite insgesamt heraus, deshalb wirkte alles schmaler.
+- Bei der Prüfung am 13.10. fehlte dieser Zustand: Die Testkopie hat keine Anmeldung, und der Knopf war ausgeblendet.
+
+**Änderung (nur im Handy-Block).**
+- „Abmelden“ steht unten rechts im Kopf, auf Höhe der Jahreszahl. Der Kopf wird dadurch nicht höher.
+- Die Tippfläche reicht über den sichtbaren Rahmen hinaus.
+- Die Jahreszahl steht am Handy immer in einer eigenen Zeile. Bei 430 px wäre sie sonst hinter den Titel gerückt und unter den Knopf geraten.
+
+**Gemessen.**
+- Mit eingeblendetem Kontobereich bei 320, 360, 375, 390, 393, 430, 500 und 640 px gilt `scrollWidth` = Fensterbreite.
+- In allen fünf Ansichten, auch mit aufgeklappten Einträgen, ragt nichts über den Rand.
+- Print und Beispiel ebenso, dort mit allen sonst ausgeblendeten Kopfteilen eingeblendet.
+- Bei 320 px berührt der Knopf die Jahresauswahl knapp. Ab 360 px ist Abstand.
+
+**Prüfsummen.** Vorher `e7a702cf84b896197f9936ca07245b9e`, nachher
+`f7efb8539e45b6dfc66c6e428714c291`.
+
+**Merke.** Am Handy immer auch im angemeldeten Zustand messen: Kontobereich einblenden, `scrollWidth` prüfen.
+
+---
+
+## 2026-10-13 — Handy-Anpassung zum Nachschlagen (veröffentlicht, Commit `a1b2d82`)
 
 **Anlass.** Marcus möchte die Jahresvorschau auch am Handy nutzen. Der Zweck ist wie bei den
 übrigen Werkzeugen nur das Nachschlagen. Bearbeiten, Daten-Dialoge und Export
