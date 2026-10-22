@@ -21,7 +21,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 (zuletzt) — Titel in EB Garamond, Schriften fest eingebaut (noch nicht veröffentlicht)
+## 2026-10-22 (zuletzt) — Titel in EB Garamond, Schriften fest eingebaut (veröffentlicht, Commit `b928421`)
 
 **Anlass.** Die Angebotswerkzeuge sind am 21./22.10. auf EB Garamond umgestellt. Marcus wollte die Jahresvorschau angleichen, damit beides einheitlich ist.
 
@@ -41,7 +41,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-13 — Tabelle bei schmalem Fenster: Ränder gleichmäßig (noch nicht veröffentlicht)
+## 2026-10-13 — Tabelle bei schmalem Fenster: Ränder gleichmäßig (veröffentlicht, Commit `b928421`)
 
 **Anlass.** Marcus fragte, ob die Tabellenränder in der Tabellenansicht alle gleichmäßig sind.
 
