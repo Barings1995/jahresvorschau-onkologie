@@ -21,7 +21,28 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-23 (zuletzt) — Tabellendruck: weiße Lücke an den Ecken des Tabellenkopfs geschlossen (veröffentlicht, Commit `0ae3485`)
+## 2026-10-23 (zuletzt) — Hinweis unter der Jahresmatrix aufrecht (nicht veröffentlicht)
+
+**Anlass.** Marcus bat, auch die Bildschirmansicht auf ungewollte Änderungen nach der Schriftumstellung zu prüfen.
+
+**Prüfung.** 5 Ansichten × 4 Inhalte bei 1280, 1000, 800 und 390 px, alt (`664ce9a`) gegen neu, mit in beiden Fassungen gleich hoch gesetztem Kopf. Ohne das verschiebt die um 4,4 px geänderte Kopfhöhe alles um Bruchteile eines Pixels. Seitenhöhen unter dem Kopf überall gleich, alles pixelgleich außer:
+- der Tabelle bei schmalem Fenster (Trennlinie der stehenden Titelspalte, gewollt seit `b928421`);
+- den aufrechten Hinweisen bei leerer Auswahl;
+- dem kursiven Hinweis unter der Jahresmatrix.
+
+Eine Kursive ist nicht eingebaut, der Browser stellte die Schrift nur schräg.
+
+**Änderung.** `.mx-hint` ohne `font-style:italic`.
+
+**Bewusst belassen (Marcus).** „Datenpflege“ im Export-Menü und im Bearbeiten-Bereich bleibt `<em>` (Hervorhebung aus `18e15a2`), auch ohne eingebaute Kursive.
+
+**Gemessen.** Gegen den Stand davor nur das Band des Matrix-Hinweises verschieden (1280 und 390 px). Im Beispiel weichen außerdem die Cover-Bilder ab, aber ebenso zwischen zwei Läufen derselben Datei, das ist also kein Unterschied. Druck unberührt, der Hinweis ist dort ausgeblendet.
+
+**Prüfsummen.** Vorher `7c7aace005342457acb76fddebf52291`, nachher `754780b141a9732a1f6a987f10123619`.
+
+---
+
+## 2026-10-23 — Tabellendruck: weiße Lücke an den Ecken des Tabellenkopfs geschlossen (veröffentlicht, Commit `0ae3485`)
 
 **Anlass.** Marcus sah im PDF eine weiße Lücke im grauen Tabellenrahmen, dort wo die dunkelblaue Kopflinie auf ihn trifft.
 
