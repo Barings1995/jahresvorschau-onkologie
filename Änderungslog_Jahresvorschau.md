@@ -21,7 +21,23 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 (zuletzt) — Tabellendruck: graue Linie unter dem Kopf der Folgeseiten verdeckt (nicht veröffentlicht)
+## 2026-10-23 (zuletzt) — Druck: Titelzeile auf 1/64 px genau so hoch wie vor der Schriftumstellung (nicht veröffentlicht)
+
+**Anlass.** Marcus fragte, was es mit den zwei Restunterschieden aus dem PDF-Vergleich auf sich hat: der anders gerasterten Zeile „4.000 Expl.“ in der Kongressliste und der Haarlinie in der Matrix.
+
+**Ursachen.**
+- *„Expl.“-Zeile:* Chrome rundet die Zeilenhöhe auf 1/64 px, und zwar je nach Schrift. Mit `18.4pt` war die Titelzeile 1570/64 px hoch, vor der Umstellung (Playfair, 16 pt × 1,15) 1569/64. Alles darunter lag dadurch 0,016 px tiefer. Kleine Schrift, deren Lage nahe an einer Rastergrenze liegt, sprang dadurch um einen Bildpunkt. Dasselbe erklärt den Versatz um 0,02 px im Beispiel.
+- *Haarlinie in der Matrix:* Kein Schriftthema. 12 Bildpunkte, je eine Farbstufe dunkler, an den Kreuzungen der Titelspalte mit den Zeilenlinien. Vor der Korrektur `7f2c087` stand die Titelspalte auch im Druck auf `position:sticky`, das änderte die Malreihenfolge an den Kreuzungen. Mit der alten Regel testweise eingesetzt ist die Matrix wieder pixelgleich. Der heutige Stand ist der richtige.
+
+**Änderung.** `.eh-titel{line-height:18.39pt}` statt `18.4pt`.
+
+**Gemessen.** Druckkopf 70,375 px wie vor der Umstellung (vorher 70,390625). 40 PDFs je Fassung gegen den Stand vor der Schriftumstellung, Seitenzahlen alle gleich. Web: 163 Seiten pixelgleich, 38 nur in der Titelzeile verschieden. Darüber hinaus verschieden sind nur der Tabellenkopf (Korrekturen von gestern), die aufrechten Hinweise und die Matrix-Kreuzungen (siehe oben). „Expl.“-Zeile und Versatz im Beispiel sind verschwunden.
+
+**Prüfsummen.** Vorher `e228641dd006705ec3a25013920f9539`, nachher `7c57798f4c31c24841a8afe52814dabf`.
+
+---
+
+## 2026-10-22 — Tabellendruck: graue Linie unter dem Kopf der Folgeseiten verdeckt (nicht veröffentlicht)
 
 **Anlass.** Marcus sah im Bild der Folgeseite, dass die dunkelblaue Linie über der grauen lag statt auf ihr.
 

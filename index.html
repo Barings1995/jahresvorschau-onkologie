@@ -648,8 +648,12 @@ body.bearbmodus .daten-btn:hover{background:var(--sblue);border-color:var(--sblu
   .eh-logo .cls-1{fill:var(--navy)}
   /* Zeilenhoehe fest auf den Wert vor der Umstellung auf EB Garamond (16pt x 1,15):
      mit 18pt x 1,15 wurde der Kopf gut 3 px hoeher, und in den Kacheln quer mit
-     Auslagen passte die dritte Reihe nicht mehr auf Seite 1. */
-  .eh-titel{font-family:'EB Garamond','Minion Pro',Georgia,serif;font-weight:600;font-size:18pt;line-height:18.4pt;color:var(--navy)}
+     Auslagen passte die dritte Reihe nicht mehr auf Seite 1. 18,39 statt 18,4 pt,
+     weil Chrome die Zeile je nach Schrift auf 1/64 px rundet: mit 18,4 pt lag
+     alles darunter 1/64 px tiefer als vorher, kleine Schrift und Haarlinien
+     wurden dadurch stellenweise anders gerastert. Gemessen: Kopf 70,375 px
+     wie vor der Umstellung. */
+  .eh-titel{font-family:'EB Garamond','Minion Pro',Georgia,serif;font-weight:600;font-size:18pt;line-height:18.39pt;color:var(--navy)}
   .eh-titel span{color:var(--accent)}
   .eh-auswahl{font-size:8.5pt;line-height:1.4;color:var(--navy);margin-top:5px}
   .eh-stand{font-size:7.5pt;line-height:1.4;color:var(--muted);margin-top:2px}
