@@ -725,6 +725,11 @@ body.bearbmodus .daten-btn:hover{background:var(--sblue);border-color:var(--sblu
      Darstellung: Lage und Staerke auf allen Seiten wie bisher auf Seite 1. */
   table.tab th{background:none;color:var(--navy);border-bottom:1.5px solid transparent;font-size:6.5pt;padding:5px 5px;position:relative}
   table.tab th::after{content:'';position:absolute;left:0;right:0;bottom:-.5px;height:1px;background:var(--navy)}
+  /* An den beiden Aussenecken setzt sich der breitere, durchsichtige Rand gegen
+     den Tabellenrahmen durch und schnitt eine weisse Luecke hinein. Die Linie
+     reicht dort deshalb ueber den Rahmen, wie zuvor die dunkelblaue Randlinie. */
+  table.tab th:first-child::after{left:-1px}
+  table.tab th:last-child::after{right:-1px}
   /* Chrome wiederholt die Kopfzeile auf jeder Seite, zeichnet darin aber keine
      Knoepfe: auf den Folgeseiten stand nur "Kongresse", die einzige Spalte
      ohne Sortierknopf. Im Druck traegt der Knopf deshalb keinen eigenen Kasten,

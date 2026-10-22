@@ -21,7 +21,21 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-23 (zuletzt) — Druck: Titelzeile auf 1/64 px genau so hoch wie vor der Schriftumstellung (veröffentlicht, Commit `c01e55b`)
+## 2026-10-23 (zuletzt) — Tabellendruck: weiße Lücke an den Ecken des Tabellenkopfs geschlossen (nicht veröffentlicht)
+
+**Anlass.** Marcus sah im PDF eine weiße Lücke im grauen Tabellenrahmen, dort wo die dunkelblaue Kopflinie auf ihn trifft.
+
+**Ursache.** Folge von `a7fedee`. Der untere Rand der Kopfzellen ist seitdem durchsichtig. An den beiden Außenecken setzt sich der breitere Rand (1,5 px) gegen den Tabellenrahmen (1 px) durch, und die Ecke blieb leer. Die Linie aus `th::after` endete an der Zellkante, also vor dem Rahmen. Vorher war der untere Rand dunkelblau und füllte die Ecke.
+
+**Änderung.** `th:first-child::after{left:-1px}` und `th:last-child::after{right:-1px}`: Die Linie reicht an beiden Enden über den Rahmen.
+
+**Gemessen.** 40 PDFs gegen den Stand davor (`c01e55b`): Seitenzahlen gleich, außerhalb der Tabelle pixelgleich, in der Tabelle nur je 3 Bildpunktspalten an beiden Enden der Kopflinie verschieden. An beiden Ecken auf Seite 1 und den Folgeseiten ist die Linie wieder dunkelblau über dem Rahmen wie vor allen Änderungen. Weiß bleibt nichts.
+
+**Prüfsummen.** Vorher `7c57798f4c31c24841a8afe52814dabf`, nachher `7c7aace005342457acb76fddebf52291`.
+
+---
+
+## 2026-10-23 — Druck: Titelzeile auf 1/64 px genau so hoch wie vor der Schriftumstellung (veröffentlicht, Commit `c01e55b`)
 
 **Anlass.** Marcus fragte, was es mit den zwei Restunterschieden aus dem PDF-Vergleich auf sich hat: der anders gerasterten Zeile „4.000 Expl.“ in der Kongressliste und der Haarlinie in der Matrix.
 
