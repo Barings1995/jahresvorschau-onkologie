@@ -21,7 +21,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-23 (zuletzt) — Tabellendruck: weiße Lücke an den Ecken des Tabellenkopfs geschlossen (nicht veröffentlicht)
+## 2026-10-23 (zuletzt) — Tabellendruck: weiße Lücke an den Ecken des Tabellenkopfs geschlossen (veröffentlicht, Commit `0ae3485`)
 
 **Anlass.** Marcus sah im PDF eine weiße Lücke im grauen Tabellenrahmen, dort wo die dunkelblaue Kopflinie auf ihn trifft.
 
