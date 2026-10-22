@@ -21,7 +21,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 (zuletzt) — Tabellendruck: Kopfzelle „Titel“ nicht mehr blau (noch nicht veröffentlicht)
+## 2026-10-22 (zuletzt) — Tabellendruck: Kopfzelle „Titel“ nicht mehr blau (veröffentlicht, Commit `7f2c087`)
 
 **Anlass.** Marcus fragte, warum im PDF die Titelspalte oben links blau hinterlegt ist.
 
@@ -38,7 +38,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 — Tabellendruck: Datumsangaben wieder in normaler Stärke (noch nicht veröffentlicht)
+## 2026-10-22 — Tabellendruck: Datumsangaben wieder in normaler Stärke (veröffentlicht, Commit `7f2c087`)
 
 **Anlass.** Marcus bemerkte, dass im PDF-Export der Tabelle nach der Schriftumstellung etwas nicht stimmte.
 
