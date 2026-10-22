@@ -21,7 +21,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-23 (zuletzt) — Jahresmatrix: eckig, im Druck mit Linie unter den Spaltenköpfen (nicht veröffentlicht)
+## 2026-10-23 (zuletzt) — Jahresmatrix: eckig, im Druck mit Linie unter den Spaltenköpfen (veröffentlicht, Commit `d04fb1f`)
 
 **Anlass.** Marcus schlug vor, die Matrix eckig zu machen wie die Tabelle, damit nichts übersteht, und im Druck die Spaltenköpfe durch eine Linie abzugrenzen.
 
@@ -42,7 +42,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-23 — Hinweis unter der Jahresmatrix aufrecht (nicht veröffentlicht)
+## 2026-10-23 — Hinweis unter der Jahresmatrix aufrecht (veröffentlicht, Commit `feb5d79`)
 
 **Anlass.** Marcus bat, auch die Bildschirmansicht auf ungewollte Änderungen nach der Schriftumstellung zu prüfen.
 
