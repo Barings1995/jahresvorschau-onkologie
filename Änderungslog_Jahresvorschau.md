@@ -21,7 +21,24 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 (zuletzt) — Tabellendruck: Kopfzelle „Titel“ nicht mehr blau (veröffentlicht, Commit `7f2c087`)
+## 2026-10-22 (zuletzt) — Kopfstreifen so hoch wie in den Angebotswerkzeugen (noch nicht veröffentlicht)
+
+**Anlass.** Marcus fragte, warum der Kopf hier anders hoch ist als in den Angebotswerkzeugen.
+
+**Ursache.** `.sm-hero-head{margin-bottom:8px}` stammte aus den Angebotswerkzeugen, wo unter der Kopfzeile eine Erklärzeile stand. Dort liegt sie seit heute hinter einem Info-Zeichen (Commit `b4cfbc4` der Angebotswerkzeuge), und der Abstand fiel weg. Hier folgte unter der Kopfzeile nie etwas, die 8 px waren leerer Platz.
+
+**Änderung.** Abstand entfernt. Am Handy war er schon 0.
+
+**Gemessen.**
+- 1280 px: Kopfstreifen 97,7 → 89,7 px, gleich den Angebotswerkzeugen (OpenSlots, PreisWerk je 89,7 px). Logo und Schrift im Kopf pixelgleich, der Inhalt darunter um genau 8 px nach oben gerückt (Abweichung danach höchstens 6 Farbstufen, nur im Verlauf).
+- 390 px: Bild pixelgleich.
+- Druck unverändert: Kacheln 9, Tabelle 5, Matrix 1 Seite (Kopfstreifen fällt im Druck weg).
+
+**Prüfsummen.** Vorher `f896da6a9185ea1443ea8d99012a3e3f`, nachher `ca7a3280d6d5812b03f75e1c328858fd`.
+
+---
+
+## 2026-10-22 — Tabellendruck: Kopfzelle „Titel“ nicht mehr blau (veröffentlicht, Commit `7f2c087`)
 
 **Anlass.** Marcus fragte, warum im PDF die Titelspalte oben links blau hinterlegt ist.
 

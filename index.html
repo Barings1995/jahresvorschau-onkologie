@@ -53,7 +53,10 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 header{background:var(--surface);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,40,90,.08)}
 /* Hero-Streifen (Logo + Titel), analog OpenSlots */
 .sm-hero{background:linear-gradient(135deg,#002050 0%,var(--navy) 60%,#004080 100%);border-bottom:3px solid var(--accent);padding:1.1rem 1.5rem 1rem}
-.sm-hero-head{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+/* Ohne Abstand nach unten: die 8 px stammten aus den Angebotswerkzeugen, wo darunter
+   eine Erklaerzeile stand. Die liegt dort seit 22.10.2026 hinter einem Info-Zeichen, und
+   der Abstand fiel weg; hier folgte ohnehin nichts. Beide Koepfe jetzt 89,7 px. */
+.sm-hero-head{display:flex;align-items:center;gap:16px}
 .sm-logo-white{line-height:0;flex:none}
 .sm-logo-white svg{height:30px;width:auto;display:block}
 .sm-hero-div{width:1px;align-self:stretch;min-height:34px;background:rgba(255,255,255,.28);flex:none}
