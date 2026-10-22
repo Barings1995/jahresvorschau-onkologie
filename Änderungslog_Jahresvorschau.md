@@ -21,7 +21,28 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-23 (zuletzt) — Hinweis unter der Jahresmatrix aufrecht (nicht veröffentlicht)
+## 2026-10-23 (zuletzt) — Jahresmatrix: eckig, im Druck mit Linie unter den Spaltenköpfen (nicht veröffentlicht)
+
+**Anlass.** Marcus schlug vor, die Matrix eckig zu machen wie die Tabelle, damit nichts übersteht, und im Druck die Spaltenköpfe durch eine Linie abzugrenzen.
+
+**Ursachen.**
+- *Überstände:* `table.matrix` hatte `border-radius:6px`. Die eckigen Zellen ragten über die runden Ecken: oben links der Grund der Kopfzelle, unten links der Farbbalken des letzten Titels. Die Tabelle ist eckig.
+- *Keine Linie im Druck:* Vorgesehen war sie längst (`.mx-month,.mx-corner{border-bottom:1.5px solid var(--navy)}`), sie griff aber nicht. Zuerst geht `table.matrix th` vor. Und selbst mit stärkerem Selektor nimmt `table.matrix tr:last-child th{border-bottom:none}` der Kopfzeile den Rand, weil sie die letzte Zeile ihres `thead` ist. Deshalb steht auch am Bildschirm keine Linie unter dem blauen Kopf. Dort bleibt es so, gewünscht war die Linie für den Druck.
+
+**Änderung.**
+- `border-radius` an `table.matrix` entfernt (Bildschirm und Druck).
+- Im Druck: Kopfzellen `border-bottom:1.5px solid transparent` (hält die Höhe) und `position:relative`. Die Linie zeichnet `thead th::after` (1 px, `bottom:-1px`, `right:-1px`, an der ersten Zelle `left:-1px`). Sie läuft über die grauen Spaltenlinien und den Rahmen durch. Als Rand gezeichnet wurde sie an jeder Spaltengrenze angeschnitten, als 1,5-px-Element war sie doppelt so stark wie in der Tabelle.
+
+**Gemessen.**
+- PDF: 40 je Fassung, Seitenzahlen gleich. Nur Matrix-Seiten verschieden (Web 8, Beispiel 6, leere Fassung keine).
+- Linie bei vierfacher Darstellung 5–6 Bildpunkte, wie die Kopflinie der Tabelle. Keine Unterbrechung an Spaltengrenzen und Rahmen.
+- Bildschirm: 1280 und 390 px, nur die Matrix verschieden (Ecken).
+
+**Prüfsummen.** Vorher `754780b141a9732a1f6a987f10123619`, nachher `9408e4a13e54325658f7e6eebb849de8`.
+
+---
+
+## 2026-10-23 — Hinweis unter der Jahresmatrix aufrecht (nicht veröffentlicht)
 
 **Anlass.** Marcus bat, auch die Bildschirmansicht auf ungewollte Änderungen nach der Schriftumstellung zu prüfen.
 
