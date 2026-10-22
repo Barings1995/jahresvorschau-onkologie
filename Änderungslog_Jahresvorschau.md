@@ -21,7 +21,31 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 (zuletzt) — Kopfstreifen so hoch wie in den Angebotswerkzeugen (veröffentlicht, Commit `cf00913`)
+## 2026-10-22 (zuletzt) — Druck: Kopfzeile der Tabelle auf jeder Seite, Titelzeile wieder so hoch wie vorher, Hinweise aufrecht (nicht veröffentlicht)
+
+**Anlass.** Marcus bat, sämtliche PDF-Exporte auf Unterschiede nach der Schriftumstellung zu prüfen, und bemerkte dabei, dass in der Tabelle auf den Folgeseiten die Spaltenköpfe fehlen.
+
+**Ursachen.**
+- *Titelzeile:* Mit der Umstellung auf EB Garamond wuchs `.eh-titel` von 16 auf 18 pt, der Zeilenabstand blieb beim Faktor 1,15. Die Zeile wurde dadurch 24,5 → 27,6 px hoch, alles darunter rückte auf Seite 1 nach unten. In den Kacheln quer mit nur Auslagen passte die dritte Reihe nicht mehr auf Seite 1, alle weiteren Umbrüche verschoben sich (Seitenzahl blieb 7).
+- *Tabellenkopf:* Seit Commit `6d7072a` (08.10.2026) stehen die Spaltenköpfe in Sortierknöpfen. Chrome wiederholt die Kopfzeile im Druck auf jeder Seite, zeichnet die Knöpfe darin aber nicht. Auf den Folgeseiten stand nur „Kongresse“, die einzige Spalte ohne Sortierknopf. Nicht durch die Schriftumstellung verursacht.
+- *Hinweise bei leerer Auswahl* („Keine Treffer“, „Keine Kongresse in dieser Auswahl“) waren kursiv gesetzt. Eine Kursive ist nicht eingebaut, der Browser stellte die Schrift nur schräg.
+
+**Änderung.**
+- `.eh-titel{line-height:18.4pt}` (= 16 pt × 1,15, der Wert vor der Umstellung). Schriftgröße bleibt 18 pt.
+- Im Druck `table.tab th .sort-knopf{display:contents}`, die Polsterung trägt die Zelle (`th.sortable{padding:5px 5px}`). Bildschirm unverändert.
+- `.empty` ohne `font-style:italic`, auch am Bildschirm.
+
+**Gemessen.** Alle 5 Ansichten × 4 Inhaltsfilter × hoch/quer (40 PDFs) gegen den Stand vor der Schriftumstellung (`664ce9a`):
+- Seitenzahlen in allen 40 gleich. Druckkopf 70,38 → 70,39 px (vorher nach der Umstellung 73,45).
+- 112 von 171 Seiten pixelgleich, 16 weitere nur in der Titelzeile verschieden (Schriftart).
+- Tabelle: Kopfzeile auf jeder Folgeseite vollständig, sonst wie vorher.
+- Übrig: aufrechter Hinweis (Themenschwerpunkte + Kongressliste), Kongressliste „Expl.“-Zeile minimal anders gerastert, Matrix eine Haarlinie um 1 Farbstufe.
+
+**Prüfsummen.** Vorher `ca7a3280d6d5812b03f75e1c328858fd`, nachher `45ac962b9beab303509b9e74a798efe5`.
+
+---
+
+## 2026-10-22 — Kopfstreifen so hoch wie in den Angebotswerkzeugen (veröffentlicht, Commit `cf00913`)
 
 **Anlass.** Marcus fragte, warum der Kopf hier anders hoch ist als in den Angebotswerkzeugen.
 
