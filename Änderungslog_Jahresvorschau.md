@@ -21,7 +21,21 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 (zuletzt) — Druck: Kopfzeile der Tabelle auf jeder Seite, Titelzeile wieder so hoch wie vorher, Hinweise aufrecht (nicht veröffentlicht)
+## 2026-10-22 (zuletzt) — Tabellendruck: Linie unter dem Kopf auf allen Seiten gleich (nicht veröffentlicht)
+
+**Anlass.** Auf den Folgeseiten stand unter der wiederholten Kopfzeile nur eine dünne graue Linie statt der dunkelblauen wie auf Seite 1. Marcus bat, das anzugleichen.
+
+**Ursache.** In der wiederholten Kopfzeile zeichnet Chrome den unteren Rand der Kopfzellen nicht. Sichtbar blieb nur die 0,5-px-Linie über der ersten Zeile der Seite.
+
+**Änderung.** Im Druck zeichnet `box-shadow:inset 0 -1.5px 0 var(--navy)` die Linie. Der Rand bleibt mit 1,5 px stehen, aber durchsichtig: Er verdeckt weiterhin die Linie über der ersten Zeile, und die Höhen bleiben gleich. Ausprobiert und verworfen wurden ein Schatten an der Kopfzeile statt an den Zellen (auf Folgeseiten ebenfalls nicht gezeichnet), ein auf die Rasterlinie zentrierter Schatten und ein Verlauf als Hintergrund (beide auf Seite 1 und 2 unterschiedlich stark).
+
+**Gemessen.** 40 PDFs gegen den Stand davor (`dd6a2ae`): Seitenzahlen gleich, außerhalb der Tabelle alle Seiten pixelgleich. In der Tabelle unterscheidet sich nur das Band der Kopflinie. Linienstärke gerastert Seite 1 / Folgeseiten 2,9 / 3,0 Bildpunkte bei 1,5-facher Darstellung (vorher 2,25 / 0,64). Die Linie sitzt auf Seite 1 rund 0,75 px höher.
+
+**Prüfsummen.** Vorher `45ac962b9beab303509b9e74a798efe5`, nachher `5c1e37fb45263105dd9003864da9eefa`.
+
+---
+
+## 2026-10-22 — Druck: Kopfzeile der Tabelle auf jeder Seite, Titelzeile wieder so hoch wie vorher, Hinweise aufrecht (nicht veröffentlicht)
 
 **Anlass.** Marcus bat, sämtliche PDF-Exporte auf Unterschiede nach der Schriftumstellung zu prüfen, und bemerkte dabei, dass in der Tabelle auf den Folgeseiten die Spaltenköpfe fehlen.
 
