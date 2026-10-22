@@ -21,7 +21,54 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-13 (zuletzt) — Handy: Seite angemeldet zu breit, Safari zoomte heraus (veröffentlicht, Commit `bb8ddb5`)
+## 2026-10-22 (zuletzt) — Titel in EB Garamond, Schriften fest eingebaut (noch nicht veröffentlicht)
+
+**Anlass.** Die Angebotswerkzeuge sind am 21./22.10. auf EB Garamond umgestellt. Marcus wollte die Jahresvorschau angleichen, damit beides einheitlich ist.
+
+**Änderung.**
+- Titel in EB Garamond Halbfett (600) statt Playfair Display Fett (700): Kopf `h1` 28 statt 25 px, am Handy 1,35 statt 1,2 rem, PDF-Dokumentkopf 18 statt 16 pt, Anmeldemaske 1,5 statt 1,35 rem. Die neuen Größen halten die Wortbreite der alten, wie in den Angebotswerkzeugen.
+- Schriften fest eingebaut statt von Google Fonts geladen: Baustein `Bausteine/schriften.css` der Angebotswerkzeuge unverändert übernommen (EB Garamond und Source Sans 3, variabel, woff2, SIL OFL 1.1, `font-display:block`). Keine Anfrage mehr an Google. Die Datei wächst um rund 98 KB.
+- Kursiv ist nicht eingebaut (der Baustein hat es nicht). Bisher lud die Seite Source Sans 3 Kursiv von Google. Die zwei kursiven Hinweise (keine Treffer, Matrix-Hinweis) und das `<em>` im Export-Menü neigt jetzt der Browser selbst.
+
+**Gemessen.**
+- Kopf bei 1280 px: Titelbreite 442,6 statt 447,4 px, Höhe 33,6 statt 30 px. Der Kopfstreifen wird 3,6 px höher, wie in den Angebotswerkzeugen.
+- Handy 390 px: Titel weiter in drei Zeilen, `scrollWidth` = 390.
+- Geladene Schriften: nur die zwei eingebauten.
+- Druck: Kacheln 9, Tabelle 5, Matrix 1 Seite, wie vorher. Kopf weiter „54 Ausgaben“.
+- HTML-Export (`baueKopie()`), alt gegen neu, je mit und ohne Netz: Der neue Export trägt beide Schriften eingebaut (457 statt 358 KB) und stellt keine Anfrage nach außen. Mit und ohne Netz sieht er gleich aus. Der alte fiel ohne Netz auf Ersatzschriften zurück. Suche, Ansichtswechsel und Druck (9/5/1 Seiten) funktionieren, keine Skriptfehler.
+
+**Prüfsummen.** Vorher `3c4bf1f612df5f0367e0b16860e37f96`, nachher `6dc9c03cfd99e7ed6c11ba3f0f3e4bdd`.
+
+---
+
+## 2026-10-13 — Tabelle bei schmalem Fenster: Ränder gleichmäßig (noch nicht veröffentlicht)
+
+**Anlass.** Marcus fragte, ob die Tabellenränder in der Tabellenansicht alle gleichmäßig sind.
+
+**Befund.**
+- Am Desktop ja: Rahmen und Kopflinie in `--border`, Zeilenlinien heller in `--surface3`, alle 1 px und durchgehend.
+- Unter 1000 px Breite nicht:
+  - Die Trennlinie hinter der stehenden Titelspalte fehlte ganz. Chrome malt den Schatten (`box-shadow`) einer Zelle bei zusammenfallenden Rändern (`border-collapse:collapse`) nicht.
+  - Beim seitlichen Schieben rollte der linke Tabellenrand mit weg. Links neben der Titelspalte schien ein halber Pixel der darunter laufenden Zellen durch.
+
+**Änderung (nur Bildschirm, nur bis 1000 px).**
+- Getrennte Ränder (`separate`, Abstand 0).
+- Der Rahmen sitzt am rollenden Behälter `.tabwrap` und bleibt stehen.
+- Die Trennlinie hinter der Titelspalte ist ein echter Rand der stehenden Zelle.
+- Der Druck behält `collapse`, weil der neue Block auf `screen` beschränkt ist.
+
+**Gemessen.**
+- Bei 360 und 390 px, ungeschoben und geschoben: Rahmen links und rechts sowie die Trennlinie überall in `#d5dce8`.
+- Die Zeilenlinien liegen in der stehenden und in der rollenden Spalte auf derselben Höhe.
+- `scrollWidth` = Fensterbreite bei 320, 390 und 430 px.
+- Desktop bei 1280 und 1920 px pixelgleich zur Vorfassung. Die einzige Abweichung bei 1920 px tritt auch zwischen zwei Läufen der alten Datei auf.
+- Druck unverändert: Tabelle 5, Kacheln 9, Matrix 1 Seite.
+
+**Prüfsummen.** Vorher `f7efb8539e45b6dfc66c6e428714c291`, nachher `3c4bf1f612df5f0367e0b16860e37f96`.
+
+---
+
+## 2026-10-13 — Handy: Seite angemeldet zu breit, Safari zoomte heraus (veröffentlicht, Commit `bb8ddb5`)
 
 **Anlass.** Marcus hat am iPhone bemerkt, dass die Inhalte schmaler wirken, als sie sein müssten.
 
