@@ -21,7 +21,21 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 (zuletzt) — Tabellendruck: Linie unter dem Kopf auf allen Seiten gleich (nicht veröffentlicht)
+## 2026-10-22 (zuletzt) — Tabellendruck: graue Linie unter dem Kopf der Folgeseiten verdeckt (nicht veröffentlicht)
+
+**Anlass.** Marcus sah im Bild der Folgeseite, dass die dunkelblaue Linie über der grauen lag statt auf ihr.
+
+**Ursache.** Der Schatten aus dem Eintrag darunter liegt innerhalb der Kopfzelle. Die graue 0,5-px-Linie über der ersten Zeile der Folgeseite blieb darunter sichtbar. Auf Seite 1 verdeckt sie der unsichtbare Rand. Außerdem lag die Linie auf Seite 1 rund 0,75 px höher und war gerastert kräftiger als vorher.
+
+**Änderung.** Statt des Schattens zeichnet `th::after` die Linie (1 px hoch, `bottom:-.5px`), die Zelle trägt `position:relative`. Das Element ragt einen halben Pixel unter die Zelle und deckt die graue Linie zu.
+
+**Gemessen.** 40 PDFs gegen den Stand vor der Linienkorrektur (`dd6a2ae`): Seitenzahlen gleich, außerhalb der Tabelle pixelgleich. Bei vierfacher Darstellung ist die Linie auf Seite 1 so stark und so gelegen wie vor allen heutigen Änderungen (5,6 Bildpunkte ab derselben Zeile). Auf den Folgeseiten misst sie 5,7 Bildpunkte, ohne graue Linie darunter. Auf Seite 1 sind 18 Bildpunkte verschieden: Die Linie schließt jetzt die winzigen Lücken an den Spaltengrenzen.
+
+**Prüfsummen.** Vorher `5c1e37fb45263105dd9003864da9eefa`, nachher `e228641dd006705ec3a25013920f9539`.
+
+---
+
+## 2026-10-22 — Tabellendruck: Linie unter dem Kopf auf allen Seiten gleich (nicht veröffentlicht)
 
 **Anlass.** Auf den Folgeseiten stand unter der wiederholten Kopfzeile nur eine dünne graue Linie statt der dunkelblauen wie auf Seite 1. Marcus bat, das anzugleichen.
 
