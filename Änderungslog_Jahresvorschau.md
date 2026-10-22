@@ -21,7 +21,41 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 (zuletzt) — Titel in EB Garamond, Schriften fest eingebaut (veröffentlicht, Commit `b928421`)
+## 2026-10-22 (zuletzt) — Tabellendruck: Kopfzelle „Titel“ nicht mehr blau (noch nicht veröffentlicht)
+
+**Anlass.** Marcus fragte, warum im PDF die Titelspalte oben links blau hinterlegt ist.
+
+**Ursache.** Fehler aus der Handy-Anpassung (Commit `a1b2d82`). Der Block für die stehende Titelspalte (`@media(max-width:1000px)`) galt auch im Druck, weil die Druckseite ebenfalls als schmal zählt. Seine Regel `table.tab th:first-child{background:var(--navy-faint)}` ist spezifischer als die Druckregel `table.tab th{background:none}`, deshalb blieb nur diese eine Kopfzelle hinterlegt. Die stehende Zelle (`position:sticky`) ließ außerdem die Zeilenlinien in der Titelspalte etwas heller und leicht versetzt erscheinen.
+
+**Änderung.** Der Block gilt nur noch für den Bildschirm (`@media screen and (max-width:1000px)`), wie der Ränder-Block darunter.
+
+**Gemessen.**
+- PDF Tabelle: Kopfzelle „Titel“ weiß wie alle übrigen. Zeilenlinien in allen Spalten gleich (`#b4bfd0` bei 1,5-facher Darstellung, vorher in der Titelspalte `#c3cddc`). Sonst keine Abweichung.
+- PDF Kacheln: pixelgleich. PDF Matrix: höchstens 1 Farbstufe Abweichung, nicht sichtbar.
+- Handy 390 px: Titelspalte steht weiter, Kopfzelle weiter hinterlegt, Bild pixelgleich, `scrollWidth` = 390.
+
+**Prüfsummen.** Vorher `b81bb8bb409c5c16340b39b04d3c03a5`, nachher `f896da6a9185ea1443ea8d99012a3e3f`.
+
+---
+
+## 2026-10-22 — Tabellendruck: Datumsangaben wieder in normaler Stärke (noch nicht veröffentlicht)
+
+**Anlass.** Marcus bemerkte, dass im PDF-Export der Tabelle nach der Schriftumstellung etwas nicht stimmte.
+
+**Ursache.**
+- `.dv` (alle Datumsangaben) stand im CSS auf Stärke 500. Google Fonts lieferte nur 300/400/600/700, der Browser nahm deshalb immer 400. So sah die Seite seit jeher aus.
+- Die eingebettete variable Schrift kann 500 wirklich darstellen. Die Daten wurden fetter und breiter, die Datumsspalten nahmen Platz von „Themenschwerpunkte“, dort brach Text anders um. Die Zeilen wurden höher, und auf Seite 1 rutschte die letzte Zeile auf Seite 2.
+- Bei der Prüfung zuvor fiel das nicht auf, weil nur die Seitenzahl (5) verglichen wurde, nicht der Inhalt der Seiten.
+
+**Änderung.** `.dv` auf 400, also auf das, was bisher tatsächlich zu sehen war. Andere Stärken außerhalb von 300/400/600/700 kommen in der Datei nicht vor.
+
+**Gemessen.** PDF alt (vor der Schriftumstellung) gegen neu, Seite für Seite als Bild: Kacheln Seiten 2–9, Tabelle Seiten 2–5 pixelgleich. Auf Seite 1 jeder Ansicht steht der Inhalt unverändert, nur rund 2 pt tiefer, weil die Überschrift in EB Garamond höher ist. Seitenumbrüche gleich.
+
+**Prüfsummen.** Vorher `6dc9c03cfd99e7ed6c11ba3f0f3e4bdd`, nachher `b81bb8bb409c5c16340b39b04d3c03a5`.
+
+---
+
+## 2026-10-22 — Titel in EB Garamond, Schriften fest eingebaut (veröffentlicht, Commit `b928421`)
 
 **Anlass.** Die Angebotswerkzeuge sind am 21./22.10. auf EB Garamond umgestellt. Marcus wollte die Jahresvorschau angleichen, damit beides einheitlich ist.
 
