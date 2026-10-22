@@ -21,7 +21,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-23 (zuletzt) — Druck: Titelzeile auf 1/64 px genau so hoch wie vor der Schriftumstellung (nicht veröffentlicht)
+## 2026-10-23 (zuletzt) — Druck: Titelzeile auf 1/64 px genau so hoch wie vor der Schriftumstellung (veröffentlicht, Commit `c01e55b`)
 
 **Anlass.** Marcus fragte, was es mit den zwei Restunterschieden aus dem PDF-Vergleich auf sich hat: der anders gerasterten Zeile „4.000 Expl.“ in der Kongressliste und der Haarlinie in der Matrix.
 
@@ -37,7 +37,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 — Tabellendruck: graue Linie unter dem Kopf der Folgeseiten verdeckt (nicht veröffentlicht)
+## 2026-10-22 — Tabellendruck: graue Linie unter dem Kopf der Folgeseiten verdeckt (veröffentlicht, Commit `a7fedee`)
 
 **Anlass.** Marcus sah im Bild der Folgeseite, dass die dunkelblaue Linie über der grauen lag statt auf ihr.
 
@@ -51,7 +51,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 — Tabellendruck: Linie unter dem Kopf auf allen Seiten gleich (nicht veröffentlicht)
+## 2026-10-22 — Tabellendruck: Linie unter dem Kopf auf allen Seiten gleich (veröffentlicht, Commit `5346ae3`)
 
 **Anlass.** Auf den Folgeseiten stand unter der wiederholten Kopfzeile nur eine dünne graue Linie statt der dunkelblauen wie auf Seite 1. Marcus bat, das anzugleichen.
 
@@ -65,7 +65,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 — Druck: Kopfzeile der Tabelle auf jeder Seite, Titelzeile wieder so hoch wie vorher, Hinweise aufrecht (nicht veröffentlicht)
+## 2026-10-22 — Druck: Kopfzeile der Tabelle auf jeder Seite, Titelzeile wieder so hoch wie vorher, Hinweise aufrecht (veröffentlicht, Commit `dd6a2ae`)
 
 **Anlass.** Marcus bat, sämtliche PDF-Exporte auf Unterschiede nach der Schriftumstellung zu prüfen, und bemerkte dabei, dass in der Tabelle auf den Folgeseiten die Spaltenköpfe fehlen.
 
