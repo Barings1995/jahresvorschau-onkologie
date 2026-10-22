@@ -21,7 +21,7 @@ Onkologie; Daten aus Supabase, veröffentlicht über GitHub Pages). Neueste Änd
 
 ---
 
-## 2026-10-22 (zuletzt) — Kopfstreifen so hoch wie in den Angebotswerkzeugen (noch nicht veröffentlicht)
+## 2026-10-22 (zuletzt) — Kopfstreifen so hoch wie in den Angebotswerkzeugen (veröffentlicht, Commit `cf00913`)
 
 **Anlass.** Marcus fragte, warum der Kopf hier anders hoch ist als in den Angebotswerkzeugen.
 
